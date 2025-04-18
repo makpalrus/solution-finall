@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.JPanel;
+
 public class GamePanel extends JPanel {
 
     private MouseInputs mouseInputs;
@@ -125,3 +126,4 @@ public class GamePanel extends JPanel {
     }
 
 }
+
