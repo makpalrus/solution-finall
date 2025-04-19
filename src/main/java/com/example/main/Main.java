@@ -1,6 +1,4 @@
-package com.example;
-
-import com.example.main.Game;
+package com.example.main;
 
 public class Main {
     public static void main(String[] args) {
