@@ -3,6 +3,7 @@ import javax.swing.JFrame;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
+
 public class GameWindow {
     private JFrame jframe;
 

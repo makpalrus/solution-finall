@@ -9,7 +9,6 @@ import com.example.main.GamePanel;
 
 import static com.example.utilz.Constants.Directions.*;
 
-
 public class KeyboardInputs implements KeyListener {
 
     private GamePanel gamePanel;
