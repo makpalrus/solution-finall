@@ -3,19 +3,9 @@ import com.example.inputs.KeyboardInputs;
 import com.example.inputs.MouseInputs;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Random;
-
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
 import static com.example.main.Game.GAME_HEIGHT;
 import static com.example.main.Game.GAME_WIDTH;
-import static com.example.utilz.Constants.Directions.*;
-import static com.example.utilz.Constants.PlayerConstants.*;
 
 public class GamePanel extends JPanel {
 

@@ -2,8 +2,6 @@ package com.example.levels;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-
-import com.example.levels.Level;
 import com.example.main.Game;
 import com.example.utilz.LoadSave;
 

@@ -1,6 +1,5 @@
 package com.example.utilz;
 
-
 public class Constants {
 
     public static class Directions {
