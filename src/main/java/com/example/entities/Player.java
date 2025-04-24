@@ -4,6 +4,7 @@ import com.example.main.Game;
 import com.example.utilz.LoadSave;
 
 import static com.example.utilz.Constants.PlayerConstants.*;
+import static com.example.utilz.HelpMethods.*;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
