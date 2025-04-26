@@ -4,7 +4,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-
 public interface Statemethods {
     public void update();
 
@@ -23,3 +22,4 @@ public interface Statemethods {
     public void keyReleased(KeyEvent e);
 
 }
+
