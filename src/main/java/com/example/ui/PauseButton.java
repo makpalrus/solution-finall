@@ -1,4 +1,4 @@
-package ui;
+package com.example.ui;
 
 import java.awt.Rectangle;
 

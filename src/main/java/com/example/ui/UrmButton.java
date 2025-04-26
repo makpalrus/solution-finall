@@ -1,5 +1,4 @@
-package ui;
-
+package com.example.ui;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 

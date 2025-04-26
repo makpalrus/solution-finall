@@ -1,7 +1,7 @@
 package com.example.gamestates;
 
 import com.example.main.Game;
-import com.example.ui.MenuButton;
+import com.example.ui.*;
 
 import java.awt.event.MouseEvent;
 
@@ -13,7 +13,7 @@ public class State {
         this.game = game;
     }
 
-    public boolean isIn(MouseEvent e, MenuButton mb) {
+    public boolean isIn(MouseEvent e, ui.MenuButton mb) {
         return mb.getBounds().contains(e.getX(), e.getY());
     }
 
