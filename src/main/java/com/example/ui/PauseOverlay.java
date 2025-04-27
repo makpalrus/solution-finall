@@ -10,6 +10,7 @@ import com.example.main.Game;
 import com.example.utilz.Constants;
 import com.example.utilz.LoadSave;
 import static com.example.utilz.Constants.UI.*;
+import static com.example.utilz.Constants.UI.PauseButtons.SOUND_SIZE;
 
 public class PauseOverlay {
 
