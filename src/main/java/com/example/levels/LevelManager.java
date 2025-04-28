@@ -1,18 +1,19 @@
-package com.example.levels;
+package levels;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import com.example.gamestates.Gamestate;
-import com.example.main.Game;
-import com.example.utilz.LoadSave;
+
+import gamestates.Gamestate;
+import main.Game;
+import utilz.LoadSave;
 
 public class LevelManager {
 
 	private Game game;
 	private BufferedImage[] levelSprite;
-	private ArrayList<Level> levels;
+	private ArrayList<levels.Level> levels;
 	private int lvlIndex = 0;
 
 	public LevelManager(Game game) {
@@ -30,16 +31,17 @@ public class LevelManager {
 			Gamestate.state = Gamestate.MENU;
 		}
 
-		Level newLevel = levels.get(lvlIndex);
+		levels.Level newLevel = levels.get(lvlIndex);
 		game.getPlaying().getEnemyManager().loadEnemies(newLevel);
 		game.getPlaying().getPlayer().loadLvlData(newLevel.getLevelData());
 		game.getPlaying().setMaxLvlOffset(newLevel.getLvlOffset());
+		game.getPlaying().getObjectManager().loadObjects(newLevel);
 	}
 
 	private void buildAllLevels() {
 		BufferedImage[] allLevels = LoadSave.GetAllLevels();
 		for (BufferedImage img : allLevels)
-			levels.add(new Level(img));
+			levels.add(new levels.Level(img));
 	}
 
 	private void importOutsideSprites() {
@@ -64,7 +66,7 @@ public class LevelManager {
 
 	}
 
-	public Level getCurrentLevel() {
+	public levels.Level getCurrentLevel() {
 		return levels.get(lvlIndex);
 	}
 

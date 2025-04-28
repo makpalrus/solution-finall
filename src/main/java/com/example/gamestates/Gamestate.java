@@ -1,9 +1,9 @@
-package com.example.gamestates;
+package gamestates;
 
 public enum Gamestate {
 
-    PLAYING, MENU, OPTIONS, QUIT;
+	PLAYING, MENU, OPTIONS, QUIT;
 
-    public static Gamestate state = MENU;
+	public static Gamestate state = MENU;
 
 }

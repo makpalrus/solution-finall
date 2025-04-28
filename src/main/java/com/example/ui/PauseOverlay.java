@@ -1,19 +1,16 @@
-package com.example.ui;
+package ui;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-import com.example.gamestates.Gamestate;
-import com.example.gamestates.Playing;
-import com.example.main.Game;
-import com.example.utilz.Constants;
-import com.example.utilz.LoadSave;
-import static com.example.utilz.Constants.UI.*;
-import static com.example.utilz.Constants.UI.PauseButtons.SOUND_SIZE;
-import static com.example.utilz.Constants.UI.URMButtons.URM_SIZE;
-import static com.example.utilz.Constants.UI.VolumeButtons.SLIDER_WIDTH;
-import static com.example.utilz.Constants.UI.VolumeButtons.VOLUME_HEIGHT;
+import gamestates.Gamestate;
+import gamestates.Playing;
+import main.Game;
+import utilz.LoadSave;
+import static utilz.Constants.UI.PauseButtons.*;
+import static utilz.Constants.UI.URMButtons.*;
+import static utilz.Constants.UI.VolumeButtons.*;
 
 public class PauseOverlay {
 

@@ -1,10 +1,10 @@
-package com.example.ui;
+package ui;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-import com.example.utilz.LoadSave;
-import static com.example.utilz.Constants.UI.VolumeButtons.*;
+import utilz.LoadSave;
+import static utilz.Constants.UI.VolumeButtons.*;
 
 public class VolumeButton extends PauseButton {
 
@@ -32,7 +32,7 @@ public class VolumeButton extends PauseButton {
 			imgs[i] = temp.getSubimage(i * VOLUME_DEFAULT_WIDTH, 0, VOLUME_DEFAULT_WIDTH, VOLUME_DEFAULT_HEIGHT);
 
 		slider = temp.getSubimage(3 * VOLUME_DEFAULT_WIDTH, 0, SLIDER_DEFAULT_WIDTH, VOLUME_DEFAULT_HEIGHT);
-
+		
 	}
 
 	public void update() {
