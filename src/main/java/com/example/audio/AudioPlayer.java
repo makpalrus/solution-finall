@@ -1,5 +1,7 @@
 package audio;
 
+import com.example.gamestates.GameStateObserver;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Random;
@@ -12,7 +14,9 @@ import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class AudioPlayer {
+import static gamestates.Gamestate.PLAYING;
+
+public class AudioPlayer implements GameStateObserver {
 
 	public static int MENU_1 = 0;
 	public static int LEVEL_1 = 1;
@@ -151,6 +155,13 @@ public class AudioPlayer {
 			float range = gainControl.getMaximum() - gainControl.getMinimum();
 			float gain = (range * volume) + gainControl.getMinimum();
 			gainControl.setValue(gain);
+		}
+	}
+	@Override
+	public void onGameStateChange(gamestates.Gamestate newState) {
+		switch (newState) {
+			case MENU -> playSong(MENU_1);
+			case PLAYING -> setLevelSong(...);
 		}
 	}
 
