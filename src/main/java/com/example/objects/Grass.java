@@ -1,4 +1,4 @@
-package objects;
+package com.example.objects;
 
 public class Grass {
 

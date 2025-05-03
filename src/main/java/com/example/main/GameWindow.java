@@ -1,4 +1,4 @@
-package main;
+package com.example.main;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
@@ -14,7 +14,7 @@ public class GameWindow {
 
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.add(gamePanel);
-		
+
 		jframe.setResizable(false);
 		jframe.pack();
 		jframe.setLocationRelativeTo(null);
@@ -31,6 +31,7 @@ public class GameWindow {
 				// TODO Auto-generated method stub
 
 			}
+
 		});
 
 	}

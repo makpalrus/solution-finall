@@ -1,8 +1,9 @@
-package objects;
+package com.example.objects;
 
+import java.awt.*;
 import java.util.Random;
 
-public class BackgroundTree {
+public class BackgroundTree implements IGameObject{
 
 	private int x, y, type, aniIndex, aniTick;
 
@@ -26,6 +27,11 @@ public class BackgroundTree {
 			if (aniIndex >= 4)
 				aniIndex = 0;
 		}
+	}
+
+	@Override
+	public void draw(Graphics g, int xOffset) {
+
 	}
 
 	public int getAniIndex() {

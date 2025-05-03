@@ -1,4 +1,4 @@
-package ui;
+package com.example.ui;
 
 import static utilz.Constants.UI.PauseButtons.SOUND_SIZE;
 import static utilz.Constants.UI.VolumeButtons.SLIDER_WIDTH;

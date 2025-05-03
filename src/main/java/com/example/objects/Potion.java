@@ -1,8 +1,10 @@
-package objects;
+package com.example.objects;
 
 import main.Game;
 
-public class Potion extends GameObject {
+import java.awt.*;
+
+public class Potion extends GameObject implements IGameObject{
 
 	private float hoverOffset;
 	private int maxHoverOffset, hoverDir = 1;
@@ -22,6 +24,11 @@ public class Potion extends GameObject {
 	public void update() {
 		updateAnimationTick();
 		updateHover();
+	}
+
+	@Override
+	public void draw(Graphics g, int xOffset) {
+
 	}
 
 	private void updateHover() {

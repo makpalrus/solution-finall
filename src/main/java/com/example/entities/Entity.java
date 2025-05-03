@@ -1,4 +1,4 @@
-package entities;
+package com.example.entities;
 
 import static utilz.Constants.Directions.DOWN;
 import static utilz.Constants.Directions.LEFT;

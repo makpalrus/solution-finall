@@ -1,4 +1,4 @@
-package entities;
+package com.example.entities;
 
 import static utilz.Constants.PlayerConstants.*;
 import static utilz.HelpMethods.*;

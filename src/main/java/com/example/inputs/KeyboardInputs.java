@@ -1,37 +1,49 @@
-package inputs;
+package com.example.inputs;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import gamestates.Gamestate;
+import entities.Player;
+import gamestates.GameState;
+import gamestates.GameStateManager;
+import inputs.commands.*;
 import main.GamePanel;
 
 public class KeyboardInputs implements KeyListener {
 
 	private GamePanel gamePanel;
+	private InputHandler inputHandler;
 
 	public KeyboardInputs(GamePanel gamePanel) {
 		this.gamePanel = gamePanel;
+		inputHandler = new InputHandler();
+		Player player = gamePanel.getGame().getPlaying().getPlayer();
+
+		inputHandler.bindCommand(KeyEvent.VK_A, new MoveLeftCommand(player));
+		inputHandler.bindCommand(KeyEvent.VK_D, new MoveRightCommand(player));
+		inputHandler.bindCommand(KeyEvent.VK_SPACE, new JumpCommand(player));
+		inputHandler.bindCommand(KeyEvent.VK_F, new AttackCommand(player));
+
 	}
 
 	@SuppressWarnings("incomplete-switch")
 	@Override
 	public void keyReleased(KeyEvent e) {
-		switch (Gamestate.state) {
-		case MENU -> gamePanel.getGame().getMenu().keyReleased(e);
-		case PLAYING -> gamePanel.getGame().getPlaying().keyReleased(e);
-		case CREDITS -> gamePanel.getGame().getCredits().keyReleased(e);
-		}
+		inputHandler.handleKeyRelease(e.getKeyCode());
+
 	}
 
-	@SuppressWarnings("incomplete-switch")
+
 	@Override
 	public void keyPressed(KeyEvent e) {
-		switch (Gamestate.state) {
-		case MENU -> gamePanel.getGame().getMenu().keyPressed(e);
-		case PLAYING -> gamePanel.getGame().getPlaying().keyPressed(e);
-		case OPTIONS -> gamePanel.getGame().getGameOptions().keyPressed(e);
+		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+			if (GameStateManager.getCurrentState() == GameState.PLAYING) {
+				GameStateManager.changeState(GameState.OPTIONS); // или Gamestate.PAUSE, если ты ввела PAUSE
+				return;
+			}
 		}
+
+		inputHandler.handleKeyPress(e.getKeyCode());
 	}
 
 	@Override

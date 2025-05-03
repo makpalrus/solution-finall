@@ -1,4 +1,4 @@
-package objects;
+package com.example.objects;
 
 import static utilz.Constants.ANI_SPEED;
 import static utilz.Constants.ObjectConstants.*;

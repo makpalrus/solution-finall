@@ -1,10 +1,10 @@
-package ui;
+package com.example.ui;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-import gamestates.Gamestate;
+import gamestates.GameState;
 import gamestates.Playing;
 import main.Game;
 import utilz.LoadSave;
@@ -86,7 +86,7 @@ public class PauseOverlay {
 		if (isIn(e, menuB)) {
 			if (menuB.isMousePressed()) {
 				playing.resetAll();
-				playing.setGamestate(Gamestate.MENU);
+				playing.setGamestate(GameState.MENU);
 				playing.unpauseGame();
 			}
 		} else if (isIn(e, replayB)) {

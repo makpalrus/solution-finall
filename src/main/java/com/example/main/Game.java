@@ -1,13 +1,9 @@
-package main;
+package com.example.main;
 
 import java.awt.Graphics;
 
 import audio.AudioPlayer;
-import gamestates.Credits;
-import gamestates.GameOptions;
-import gamestates.Gamestate;
-import gamestates.Menu;
-import gamestates.Playing;
+import gamestates.*;
 import ui.AudioOptions;
 
 public class Game implements Runnable {
@@ -33,9 +29,13 @@ public class Game implements Runnable {
 	public final static int GAME_HEIGHT = TILES_SIZE * TILES_IN_HEIGHT;
 
 	private final boolean SHOW_FPS_UPS = true;
+	// Где-нибудь в инициализации
+
+
 
 	public Game() {
-		System.out.println("size: " + GAME_WIDTH + " : " + GAME_HEIGHT);
+		AudioPlayer audioPlayer = new AudioPlayer();
+		GameStateManager.subscribe(audioPlayer);
 		initClasses();
 		gamePanel = new GamePanel(this);
 		new GameWindow(gamePanel);
@@ -52,31 +52,32 @@ public class Game implements Runnable {
 		gameOptions = new GameOptions(this);
 	}
 
+
 	private void startGameLoop() {
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
 
+
 	public void update() {
-		switch (Gamestate.state) {
-		case MENU -> menu.update();
-		case PLAYING -> playing.update();
-		case OPTIONS -> gameOptions.update();
-		case CREDITS -> credits.update();
-		case QUIT -> System.exit(0);
+		switch (GameState.state) {
+			case MENU -> menu.update();
+			case PLAYING -> playing.update();
+			case OPTIONS -> gameOptions.update();
+			case CREDITS -> credits.update();
+			case QUIT -> System.exit(0);
 		}
 	}
 
 	@SuppressWarnings("incomplete-switch")
 	public void render(Graphics g) {
-		switch (Gamestate.state) {
-		case MENU -> menu.draw(g);
-		case PLAYING -> playing.draw(g);
-		case OPTIONS -> gameOptions.draw(g);
-		case CREDITS -> credits.draw(g);
+		switch (GameState.state) {
+			case MENU -> menu.draw(g);
+			case PLAYING -> playing.draw(g);
+			case OPTIONS -> gameOptions.draw(g);
+			case CREDITS -> credits.draw(g);
 		}
 	}
-
 	@Override
 	public void run() {
 		double timePerFrame = 1000000000.0 / FPS_SET;
@@ -129,7 +130,7 @@ public class Game implements Runnable {
 	}
 
 	public void windowFocusLost() {
-		if (Gamestate.state == Gamestate.PLAYING)
+		if (GameState.state == GameState.PLAYING)
 			playing.getPlayer().resetDirBooleans();
 	}
 

@@ -1,11 +1,11 @@
-package ui;
+package com.example.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-import gamestates.Gamestate;
+import gamestates.GameState;
 import gamestates.Playing;
 import main.Game;
 import utilz.LoadSave;
@@ -72,7 +72,7 @@ public class LevelCompletedOverlay {
 		if (isIn(menu, e)) {
 			if (menu.isMousePressed()) {
 				playing.resetAll();
-				playing.setGamestate(Gamestate.MENU);
+				playing.setGamestate(GameState.MENU);
 			}
 		} else if (isIn(next, e))
 			if (next.isMousePressed()) {

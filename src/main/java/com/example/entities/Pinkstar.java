@@ -1,9 +1,9 @@
-package entities;
+package com.example.entities;
 
 import static utilz.Constants.EnemyConstants.*;
 import static utilz.Constants.Dialogue.*;
 import static utilz.HelpMethods.CanMoveHere;
-import static utilz.HelpMethods.IsFloor;
+import static utilz.HelpMethods.*;
 import static utilz.Constants.Directions.*;
 
 import gamestates.Playing;
@@ -33,42 +33,42 @@ public class Pinkstar extends Enemy {
 			inAirChecks(lvlData, playing);
 		else {
 			switch (state) {
-			case IDLE:
-				preRoll = true;
-				if (tickAfterRollInIdle >= 120) {
-					if (IsFloor(hitbox, lvlData))
-						newState(RUNNING);
-					else
-						inAir = true;
-					tickAfterRollInIdle = 0;
-					tickSinceLastDmgToPlayer = 60;
-				} else
-					tickAfterRollInIdle++;
-				break;
-			case RUNNING:
-				if (canSeePlayer(lvlData, playing.getPlayer())) {
-					newState(ATTACK);
-					setWalkDir(playing.getPlayer());
-				}
-				move(lvlData, playing);
-				break;
-			case ATTACK:
-				if (preRoll) {
-					if (aniIndex >= 3)
-						preRoll = false;
-				} else {
+				case IDLE:
+					preRoll = true;
+					if (tickAfterRollInIdle >= 120) {
+						if (IsFloor(hitbox, lvlData))
+							newState(RUNNING);
+						else
+							inAir = true;
+						tickAfterRollInIdle = 0;
+						tickSinceLastDmgToPlayer = 60;
+					} else
+						tickAfterRollInIdle++;
+					break;
+				case RUNNING:
+					if (canSeePlayer(lvlData, playing.getPlayer())) {
+						newState(ATTACK);
+						setWalkDir(playing.getPlayer());
+					}
 					move(lvlData, playing);
-					checkDmgToPlayer(playing.getPlayer());
-					checkRollOver(playing);
-				}
-				break;
-			case HIT:
-				if (aniIndex <= GetSpriteAmount(enemyType, state) - 2)
-					pushBack(pushBackDir, lvlData, 2f);
-				updatePushBackDrawOffset();
-				tickAfterRollInIdle = 120;
+					break;
+				case ATTACK:
+					if (preRoll) {
+						if (aniIndex >= 3)
+							preRoll = false;
+					} else {
+						move(lvlData, playing);
+						checkDmgToPlayer(playing.getPlayer());
+						checkRollOver(playing);
+					}
+					break;
+				case HIT:
+					if (aniIndex <= GetSpriteAmount(enemyType, state) - 2)
+						pushBack(pushBackDir, lvlData, 2f);
+					updatePushBackDrawOffset();
+					tickAfterRollInIdle = 120;
 
-				break;
+					break;
 			}
 		}
 	}

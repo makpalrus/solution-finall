@@ -1,4 +1,4 @@
-package main;
+package com.example.main;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,9 +17,11 @@ public class GamePanel extends JPanel {
 		mouseInputs = new MouseInputs(this);
 		this.game = game;
 		setPanelSize();
+		setFocusable(true);
 		addKeyListener(new KeyboardInputs(this));
 		addMouseListener(mouseInputs);
 		addMouseMotionListener(mouseInputs);
+		requestFocusInWindow();
 	}
 
 	private void setPanelSize() {

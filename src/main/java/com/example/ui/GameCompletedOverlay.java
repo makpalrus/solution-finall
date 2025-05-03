@@ -1,11 +1,11 @@
-package ui;
+package com.example.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-import gamestates.Gamestate;
+import gamestates.GameState;
 import gamestates.Playing;
 import main.Game;
 import utilz.LoadSave;
@@ -23,8 +23,8 @@ public class GameCompletedOverlay {
 	}
 
 	private void createButtons() {
-		quit = new MenuButton(Game.GAME_WIDTH / 2, (int) (270 * Game.SCALE), 2, Gamestate.MENU);
-		credit = new MenuButton(Game.GAME_WIDTH / 2, (int) (200 * Game.SCALE), 3, Gamestate.CREDITS);
+		quit = new MenuButton(Game.GAME_WIDTH / 2, (int) (270 * Game.SCALE), 2, GameState.MENU);
+		credit = new MenuButton(Game.GAME_WIDTH / 2, (int) (200 * Game.SCALE), 3, GameState.CREDITS);
 	}
 
 	private void createImg() {
@@ -70,14 +70,14 @@ public class GameCompletedOverlay {
 			if (quit.isMousePressed()) {
 				playing.resetAll();
 				playing.resetGameCompleted();
-				playing.setGamestate(Gamestate.MENU);
+				playing.setGamestate(GameState.MENU);
 
 			}
 		} else if (isIn(credit, e))
 			if (credit.isMousePressed()) {
 				playing.resetAll();
 				playing.resetGameCompleted();
-				playing.setGamestate(Gamestate.CREDITS);
+				playing.setGamestate(GameState.CREDITS);
 			}
 
 		quit.resetBools();

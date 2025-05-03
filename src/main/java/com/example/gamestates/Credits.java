@@ -1,4 +1,4 @@
-package gamestates;
+package com.example.gamestates;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -62,7 +62,7 @@ public class Credits extends State implements Statemethods {
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 			bgYFloat = 0;
-			setGamestate(Gamestate.MENU);
+			setGamestate(GameState.MENU);
 		}
 	}
 

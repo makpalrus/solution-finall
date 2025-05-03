@@ -1,4 +1,4 @@
-package ui;
+package com.example.ui;
 
 import static utilz.Constants.UI.URMButtons.URM_SIZE;
 
@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-import gamestates.Gamestate;
+import gamestates.GameState;
 import gamestates.Playing;
 import main.Game;
 import utilz.LoadSave;
@@ -76,7 +76,7 @@ public class GameOverOverlay {
 		if (isIn(menu, e)) {
 			if (menu.isMousePressed()) {
 				playing.resetAll();
-				playing.setGamestate(Gamestate.MENU);
+				playing.setGamestate(GameState.MENU);
 			}
 		} else if (isIn(play, e))
 			if (play.isMousePressed()) {

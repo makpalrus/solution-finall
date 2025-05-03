@@ -1,8 +1,11 @@
-package objects;
+package com.example.objects;
 
+import inputs.commands.InputCommand;
 import main.Game;
 
-public class Cannon extends GameObject {
+import java.awt.*;
+
+public class Cannon extends GameObject implements IGameObject {
 
 	private int tileY;
 
@@ -19,8 +22,14 @@ public class Cannon extends GameObject {
 			updateAnimationTick();
 	}
 
+	@Override
+	public void draw(Graphics g, int xOffset) {
+
+	}
+
 	public int getTileY() {
 		return tileY;
 	}
+
 
 }

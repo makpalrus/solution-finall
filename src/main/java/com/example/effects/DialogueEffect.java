@@ -1,4 +1,4 @@
-package effects;
+package com.example.effects;
 
 import static utilz.Constants.ANI_SPEED;
 import static utilz.Constants.Dialogue.*;

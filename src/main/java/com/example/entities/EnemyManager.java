@@ -1,4 +1,4 @@
-package entities;
+package com.example.entities;
 
 import java.awt.Graphics;
 import java.awt.geom.Rectangle2D;

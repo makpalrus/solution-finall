@@ -1,4 +1,4 @@
-package gamestates;
+package com.example.gamestates;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -56,6 +56,7 @@ public class GameOptions extends State implements Statemethods {
 
 		menuB.draw(g);
 		audioOptions.draw(g);
+
 	}
 
 	public void mouseDragged(MouseEvent e) {
@@ -74,7 +75,7 @@ public class GameOptions extends State implements Statemethods {
 	public void mouseReleased(MouseEvent e) {
 		if (isIn(e, menuB)) {
 			if (menuB.isMousePressed())
-				Gamestate.state = Gamestate.MENU;
+				GameState.state = GameState.MENU;
 		} else
 			audioOptions.mouseReleased(e);
 		menuB.resetBools();
@@ -93,7 +94,7 @@ public class GameOptions extends State implements Statemethods {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_ESCAPE)
-			Gamestate.state = Gamestate.MENU;
+			GameState.state = GameState.MENU;
 	}
 
 	@Override

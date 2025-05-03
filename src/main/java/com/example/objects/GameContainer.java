@@ -1,10 +1,12 @@
-package objects;
+package com.example.objects;
 
 import static utilz.Constants.ObjectConstants.*;
 
 import main.Game;
 
-public class GameContainer extends GameObject {
+import java.awt.*;
+
+public class GameContainer extends GameObject implements IGameObject {
 
 	public GameContainer(int x, int y, int objType) {
 		super(x, y, objType);
@@ -31,5 +33,10 @@ public class GameContainer extends GameObject {
 	public void update() {
 		if (doAnimation)
 			updateAnimationTick();
+	}
+
+	@Override
+	public void draw(Graphics g, int xOffset) {
+
 	}
 }

@@ -1,4 +1,4 @@
-package gamestates;
+package com.example.gamestates;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
